@@ -1,0 +1,41 @@
+    import streamlit as st
+    import numpy as np
+    from PIL import Image
+    import torch
+    from torchvision import transforms
+
+    # Load the pre-trained skin cancer classification model
+    model_path = "C:/Users/HP/CANCER PRED/kidney cancer/model_danni.pt"  # Replace with the actual path to your model
+    model = torch.load(model_path, map_location=torch.device('cpu'))
+
+    # Transformation for input images
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.7630392, 0.5456477, 0.57004845], std=[0.1409286, 0.15261266, 0.16997074])
+    ])
+
+    # Streamlit app interface
+    st.title("Skin Cancer ")
+    st.write("Upload an image for skin cancer classification.")
+
+    # File upload
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+
+    if uploaded_file is not None:
+        # Preprocess the image
+        img = Image.open(uploaded_file)
+        img = transform(img)
+        img = img.unsqueeze(0)  # Add batch dimension
+
+        # Make prediction
+        model.eval()
+        with torch.no_grad():
+            output = model(img)
+
+        # Get predicted class
+        predicted_class = torch.argmax(output).item()
+
+        # Display result
+        st.image(Image.open(uploaded_file), caption="Uploaded Image.", use_column_width=True)
+        st.write("Predicted Class:", predicted_class)

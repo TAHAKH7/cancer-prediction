@@ -1,0 +1,45 @@
+
+
+KIDNEY CANCER :1
+Accuracy score of the training data :  0.9567099567099567
+Accuracy score of the test data :  0.9310344827586207
+
+
+
+
+1-ckd
+0-notckd
+normal-1
+abnormal-0
+ane : no 0 yes 1
+pe  : no 0 yes 1
+appet:poor 0 good 1
+
+drop : rbc sod pot pcc ba cad dm htn
+
+
+40,66,1.02,2.0,4.0,1,120,56,4.3,11.2,32,6500,4.3,1,0,1
+
+pc refers to pus cell
+hemo refers to hemoglobin
+
+Kidney cancer is among the 10 most common cancers in both men and women. Overall, the lifetime risk for developing kidney cancer in men is about 1 in 46 (2.02%). The lifetime risk for women is about 1 in 80 (1.03%).
+
+
+Doctors on your cancer treatment team might include:
+
+A urologist: a doctor who specializes in treating diseases of the urinary system (and male reproductive system)
+A radiation oncologist: a doctor who treats cancer with radiation therapy
+A medical oncologist: a doctor who treats cancer with medicines such as chemotherapy, targeted therapy, or immunotherapy
+
+
+
+
+The goal of this project is to develop an automated chronic kidney disease assessment where user can enter some details and can get free assessment based on the input data, The assessments are done with the help of trained machine learning models.
+
+
+
+
+Breast cancer is a type of cancer that originates in the cells of the breast. It is one of the most common cancers affecting women, but it can also occur in men.
+In 2020, there were approximately 685,000 deaths from breast cancer globally.
+Kidney cancer, also known as renal cell carcinoma (RCC), is a type of cancer that originates in the kidneys, the organs responsible for filtering waste products from the blood and producing urine.
